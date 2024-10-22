@@ -1,0 +1,2263 @@
+/*
+:::: PERSONALIZACIÓN DE LA PLATAFORMA MOODLE DE LA UNIVERSIDAD CATÓLICA LUIS AMIGÓ ::::
+
+Estas reglas de estilo sustituyen la apariencia estándar de los siguientes componentes:
+
+*********  PARTE 1 - TEMAS O PLANTILLA DE MOODLE *********  
+
++ @adaptable --> Tema "Adaptable" versión  2.2.2 - 2019112603 para Moodle 3.9
+    + @header    --> Encabezado general de la plataforma
+    + @bloques    --> Bloques laterales de Moodle (@adaptable)
+    + @dashboard --> Área personal del usuario (@adaptable)
+    + @banner    --> Banner dinámico en los cursos (@adaptable)
+    + @tabs      --> Pestañas o tabs del tema @adaptable
+    + @course    --> Funcionalidades dentro de los cursos (independiente del formato)
+    + @foros     --> Foros (Módulo nativo de Moodle)
+    + @quiz      --> Cuestionarios (@adaptable)
+    + @movil     --> Estilos para Movil de Moodle (@adaptable)
+    + @calendar  --> Calendario (Módulo nativo de Moodle)
+    + @grades    --> Calificaciones (@adaptable) 
+    + @alertas   --> Componente de @adaptable
+    + @portada   --> Página de inicio de Moodle (@adaptable)
+    + @survey    --> Módulo de encuestas de Moodle
+    + @login     --> Página y botones de login en Moodle
+    + @perfil    --> Perfil de usuario (@adaptable)
+    + @config    --> Páginas de configuración o espaciales
+    + @modal     --> Ventana modal de las aplicaciones
+    + @forms     --> Estilos para formularios a nivel de sitio
+
+*********  PARTE 2 - FORMATOS DE CURSO ********* 
+
++ @edwiser   --> Fomato de curso "Edwiser Course Formats" versión 1.0.7 - 2020061802 para Moodle 3.9
+
+
+*********  PARTE 3 - PERSONALIZACIÓN DE PLUGINS *********
+
++ @plugins  --> Estilos personalizados para plugin instalados en Moodle (no nativos)
+    + @mail      --> Plugin de Correo para Moodle
+    + @atto      --> Editor Atto
+    + @osticket  --> Bloque de Mesa de Ayuda (plugin interno)
+    + @NewsSlider --> Módulo en área personal (plugin)
+    + @SQLreports --> Informes personalizados (Módulo instalado por David Herney)
+    + @PDFAnotation --> Módulo de lectura colaborativa con PDF    
+
+*********  PARTE 4 - ESTILOS PESONALIZADOS - LLAMADOS MANUALMENTE EN HTML *********  
+    + @dicom  --> Estilos heredados de DICOM
+    + @html   --> Reglas generales para elementos html
+
+NOTA 1: Se hace referencia a versiones específicas del plugin o de moodle:    
++ #moodle3.9  -> Cambios asociados a la actualización de Moodle 3.9
+
+NOTA 2: Usar la sigla ToDo para definir tareas pendientes en este archivo
+    TODO: "pendiente por hacer..."
+
+NOTA 3: Por regla general, regla sin descripción o comentario antes de empezar, 
+hace parte del bloque que se haya comentado en las lineas anteriores.
+*/
+
+/*°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+------------------- PARTE 1 - TEMAS DE MOODLE ----------------------
+--------------------------------------------------------------------*/
+
+/***:::::::::::::: @adaptable --> Tema "Adaptable" ::::::::::::::::***/
+
+/*Se requiere este estilo después de la actualización de 2021 para evitar scroll en area personal, en sección de cursos*/
+#region-main {
+    overflow-x: visible;
+}
+
+/** @header    --> Encabezado general de la plataforma **/
+
+/* Fondo barra superior del encabezado*/
+#adaptable-page-header-wrapper,
+#page-login-index header {
+    background-color: #fbfbfb !important;
+    box-shadow: -1px 2px 3px 0px #92929226;
+}
+
+/* Posición del logo*/
+#logo {
+    margin-top: 0px;
+    max-width: 305px;
+    margin-left: 15px;
+}
+
+/*altura de cabecera*/
+#header2 {
+    max-height: 80px;
+    min-height: 80px;
+}
+
+/*Titulo del sitio*/
+#sitetitle p,
+#sitetitle h1 {
+    color: #888888 !important;
+    font-size: 0.35em;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-top: 0px;
+}
+
+/* TODO: ¿Para que sirve?*/
+.action-menu-trigger>.dropdown>a {
+    color: #ffffff;
+}
+
+/*Iconos de mensajes, notificaciones, etc*/
+#adaptable-page-header-wrapper #header2 .navbar .popover-region-toggle i,
+#adaptable-page-header-wrapper #header2 a i {
+    color: #007b99 !important;
+    font-size: 1.3em;
+}
+
+/*Nombre de usuario logueado*/
+#adaptable-page-header-wrapper #above-header .navbar-nav>li>a,
+#adaptable-page-header-wrapper #header2 .navbar-nav>div>li>a,
+#adaptable-page-header-wrapper #header2 .navbar-nav>li>a,
+#adaptable-page-header-wrapper #header2 .navbar-nav>a {
+    color: #007b99;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/*Barra de menú principal - horizontal*/
+#adaptable-page-header-wrapper #main-navbar {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #efefef;
+    /* box-shadow: -1px 2px 3px 0px rgb(146 146 146 / 15%);*/
+    border-top: 1px solid #f5f5f5;
+}
+
+/*Color del texto del menú de navegación*/
+#adaptable-page-header-wrapper #main-navbar .navbar-nav>li>a,
+#adaptable-page-header-wrapper #main-navbar .navbar-nav>li>div.nav-link {
+    color: #333;
+}
+
+/*Color de texto de menús desplegables en barra de navegación*/
+#adaptable-page-header-wrapper #main-navbar li ul li a,
+#adaptable-page-header-wrapper #main-navbar li .action-menu-trigger .dropdown-item {
+    color: #333;
+}
+
+/*Hover en menús desplegables*/
+#adaptable-page-header-wrapper #main-navbar li ul li a:hover,
+#adaptable-page-header-wrapper .dropdown-menu li a:hover,
+#adaptable-page-header-wrapper #main-navbar li .action-menu-trigger .dropdown-item:hover {
+    background-color: #f5f5f5;
+    color: #007b99;
+}
+
+.dropdown-item:hover>a,
+.dropdown-item:focus>a,
+.dropdown-menu>.active>a:hover,
+.dropdown-menu>.active>a:focus,
+#adaptable-page-header-wrapper .dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+/*Quito el fondo a los elementos activos del menú desplegable*/
+.dropdown-item:focus {
+    background-color: transparent !important;
+}
+
+/*ítem activo en bloque de navegación*/
+.block.block_course_modulenavigation ul.activities li>a.active {
+    background-color: #ecffec;
+}
+
+/*Elimino el color de fondo del menu de navegación*/
+.breadcrumb {
+    background-color: #fff !important;
+}
+
+/*Sombra de íconos de notificaciones y mensajes*/
+#adaptable-page-header-wrapper #header2 i,
+#adaptable-page-header-wrapper #page-header i {
+    text-shadow: none;
+}
+
+/*Color de piñón de editar ajustes*/
+.action-menu-trigger>.dropdown>a {
+    color: #333333;
+}
+
+/* Estilo de menu desplegable de editar ajustes*/
+#adaptable-page-header-wrapper .navbar .dropdown-menu,
+#action-menu-0-menu {
+    -webkit-box-shadow: 3px 10px 13px -3px rgb(0, 0, 0, 0.20) !important;
+    box-shadow: 3px 10px 13px -3px rgb(0, 0, 0, 0.20) !important;
+    border: 1px solid #e8e8e8;
+    padding: 2px 3px 5px 10px;
+    border-bottom: 2px solid #b1b1b1;
+    border-radius: 5px;
+}
+
+/* Color de texto en ítem de menu desplegable - editar ajustes */
+#adaptable-page-header-wrapper .dropdown-item a {
+    color: #333;
+}
+
+/*Color botón de buscador encabezado superior*/
+#adaptable-page-header-wrapper #header2 .search-input-wrapper>div {
+    color: #646464;
+}
+
+/*Ocultar busqueda de foros en barra de navagacion*/
+.forumsearch {
+    display: none !important;
+}
+
+/* Hover en opción de oculta/mostrar bloques y pantalla completa y todos los elementos del menú 
+de navegación horizontal en el header*/
+#adaptable-page-header-wrapper #main-navbar li div.nav-link:hover,
+#adaptable-page-header-wrapper #main-navbar ul.navbar-nav>li>a.nav-link:hover {
+    background-color: #fff;
+    color: #007b99;
+    box-shadow: -2px -2px 4px -4px rgb(0, 0, 0, 0.50) !important;
+    border-radius: 4px;
+}
+
+/*Hover en menu del panel de chat*/
+[data-region="message-drawer"] [data-region="body-container"] .btn-link:hover {
+    color: #007b99 !important;
+}
+
+/*Panel de notificaciones ajuste en sombra*/
+.popover-region-container {
+    border: 1px solid #f5f5f5;
+    box-shadow: 5px 5px 5px 1px #23232330;
+}
+
+/*Panel de notificaciones*/
+.content-item-container.unread {
+    background-color: #ffffff;
+    color: #51666c;
+    font-size: 13px;
+}
+
+.content-item-container.notification .content-item-body .notification-message {
+    font-size: 14px !important;
+    color: #1c2021;
+}
+
+/*TODO: Ajuste rápido mensajería, para revisar*/
+.message-app .message.send {
+    background-color: #e1ffe1;
+    color: #212529;
+}
+
+[data-region="retry-send"] {
+    display: none;
+}
+
+/* Cambio fondo en foucus de menu de usuario, que apareció azul después #moodle3.9 */
+.dropdown-item:active,
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:focus-within {
+    outline: 0;
+    background-color: #e8eaea;
+}
+
+/* Fondo de menus desplegables - ítems OJO afecta toda la plataforma*/
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #e8eaea;
+    color: black;
+    /* font-weight: bold; */
+}
+
+/*Indicadores de numero de mensajes y notificaciones*/
+.navbar .count-container {
+    background-color: #ec0600;
+    text-shadow: 1px 1px 2px #505050;
+}
+
+/*ícono de hamburguesa en vista móvil*/
+#adaptable-page-header-wrapper .above-header .nav-link>i,
+#adaptable-page-header-wrapper .above-header .navbar-nav>li>a {
+    color: #727272;
+}
+
+/*--- @header-end---*/
+
+/**  @bloques --> Bloques laterales de Moodle (@adaptable) **/
+
+/*Color de fondo del contenido bloques*/
+.block>.content {
+    background: #fafafa;
+}
+
+/*Fondo general de los bloques*/
+.block {
+    background: #ffffff !important;
+}
+
+/*Oculta region superior de bloques en los cursos... genera espacio vacío*/
+#frontblockregion {
+    display: none;
+}
+
+/*Sección de bloques solo visibles para el admin en el área personal*/
+.hidden-blocks {
+    background-color: rgb(255, 247, 228);
+}
+
+/*Apariencia de los bloques*/
+.block .title h2 {
+    color: #0c5263;
+}
+
+.block>.content {
+    background: #ffffff;
+}
+
+div.block_online_users div.message {
+    display: none;
+}
+
+/*Encabezado de card en acordion multiblok*/
+.card-header {
+    background-color: rgb(250, 250, 250);
+    border-bottom: none;
+}
+
+/*Imagenes en bloque HTML dentro de multiblock*/
+div.multiblock.multiblock-accordion div.card-body {
+    padding: 0.7rem !important;
+}
+
+/*Acordion multiblok*/
+.block_multiblock .multiblock-accordion .card-header [data-toggle="collapse"] {
+    padding: 0;
+
+
+
+    background: inherit;
+    font-weight: bold !important;
+    color: #0c5263 !important;
+}
+
+.progress-bar {
+    /*Barra de progreso en curso - bloque vista general de curso*/
+    background-color: #ff7d4a;
+}
+
+/* Bloque de progreso*/
+.block_completion_progress .progressBarCell {
+    border-left: solid 2px #ffffff;
+    border-top: solid 1px #e3e3e3;
+    border-bottom: solid 1px #e3e3e3;
+}
+
+/*Ocultar link "AHORA"*/
+.block_completion_progress .progressBarCell .firstNow {
+    display: none;
+}
+
+.block_completion_progress .barWithNow .barRowCells {
+    margin-top: 0
+}
+
+/* Margen inferior de todos lo bloques*/
+.block.mb-3 {
+    margin-bottom: -10px !important;
+}
+
+/*--- @bloques-end---*/
+
+/**  @buttons--> Área personal del usuario (@adaptable) **/
+
+/*Color de botones a nivel de plataforma*/
+.btn-primary,
+.backup-restore .singlebutton button[type="submit"],
+.path-mod-workshop .assessment-summary.graded .singlebutton input[type="submit"],
+.path-mod-workshop .example-summary.graded .singlebutton input[type="submit"],
+.btn-default,
+[data-role="next"],
+[data-role="previous"],
+input[type="submit"],
+input[type="button"],
+#searchform_button,
+a.submit,
+#notice .singlebutton+.singlebutton input,
+#page-login-index2 .forgetpass a,
+input.form-submit,
+input#id_submitbutton,
+input#id_submitbutton2,
+.path-admin .buttons input[type="submit"],
+.nav-pills>.active>a,
+td.submit input,
+div.discussionsubscription>a.discussiontoggle,
+.btn-outline-secondary,
+.paging-morelink a,
+.btn-link,
+a#adaptable-message-user-button,
+#availability_addrestriction_date.btn.btn-secondary,
+#availability_addrestriction_grade.btn.btn-secondary,
+#availability_addrestriction_profile.btn.btn-secondary,
+#availability_addrestriction_list_.btn.btn-secondary,
+#availability_addrestriction_completion.btn.btn-secondary {
+    background-color: #eeeeee;
+    color: #3a454b !important;
+}
+
+/*--- @buttons-end---*/
+
+/**  @dashboard --> Área personal del usuario (@adaptable) **/
+
+/*Fondo de div en info de linea de tiempo dashboard*/
+.list-group-item {
+    background-color: #fafafa;
+}
+
+/*Mostrar la lista completa en cards de recursos accedidos recienteme en dashboard  */
+.dashboard-card-deck.one-row {
+    flex-flow: wrap;
+}
+
+/*Barra de anuncios en Dashboard*/
+#ticker-wrap {
+    background: #f5f5f5;
+}
+
+#ticker-announce {
+    background-color: #007b99;
+    font-weight: 400;
+}
+
+#page-content {
+    padding: 10px 0 20px;
+}
+
+/*Panel del Chat // Mensajeria*/
+.bg-secondary {
+    background-color: #e1ffe1 !important;
+    border: 1px solid #e7eae7;
+}
+
+.message-app .message.send .tail {
+    border-bottom-color: #e1ffe1 !important;
+}
+
+/*Tamaño de los cards en dahsboard y otras áreas*/
+@media (min-width: 1360px) {
+    body:not(.zoomin) .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+        width: calc(33% - 0.5rem);
+    }
+}
+
+/*bloque de vista general de los cursos*/
+
+@media (min-width: 1360px) {
+    body:not(.zoomin) .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+        width: calc(33% - 0.5rem);
+    }
+
+    body.zoomin .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+        width: calc(33% - 0.5rem);
+    }
+
+    body:not(.zoomin) #page.fullin .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+        width: calc(33% - 0.5rem);
+    }
+
+    body.zoomin #page.fullin .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+        width: calc(25% - 0.5rem);
+    }
+}
+
+@media (min-width: 1360px) {
+    body:not(.zoomin) .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+        width: calc(33% - 0.5rem);
+    }
+
+    body.zoomin .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+        width: calc(33% - 0.5rem);
+    }
+
+    body:not(.zoomin) #page.fullin .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+        width: calc(33% - 0.5rem);
+    }
+
+    body.zoomin #page.fullin .dashboard-card-deck:not(.fixed-width-cards) .dashboard-card {
+        width: calc(33% - 0.5rem);
+    }
+}
+
+/*Info tabs en area personal*/
+.info-home-tabs .nav-pills .nav-link.active {
+    background-color: #ffffff;
+    color: #51666c;
+    border-radius: 5px 5px 0px 0px;
+    border-top: solid 2px #ccc;
+    border-left: solid 1px #e2e2e2;
+    border-right: solid 1px #e2e2e2;
+}
+
+.info-home-tabs .nav-pills {
+    padding: 5px 2em 0px;
+}
+
+.info-home-tabs li a:hover {
+    color: #20292b;
+    border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.info-home-tabs li a {
+    color: #64696b;
+}
+
+.info-home-tabs .nav {
+    background-color: #f5f5f5;
+}
+
+.info-home-tabs .nav-pills .show>.nav-link {
+    background-color: #e0e0e0;
+    color: #20292b;
+}
+
+.info-home-tabs .nav-item {
+    margin-right: 10px;
+}
+
+.info-home-tabs .tab-content {
+    padding: 1em 2em;
+}
+
+.info-home-tabs .dropdown-menu {
+    width: 100%;
+}
+
+/*Estilo en nombre de curso - cards en vista general de curso dashboard*/
+.block .block-cards .multiline {
+    white-space: normal;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 95%;
+}
+
+/*Estilo de barra de progreso en curso dashboard*/
+.block .block-cards .progress {
+    height: 0.8rem;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 6px;
+}
+
+/*Altura de slide de anuncios en dahsboard*/
+#slider-container {
+    height: 140px !important;
+}
+
+/* Fondo en barra de progreso bloque de cursos dashboard*/
+.dashboard-card-deck .dashboard-card .dashboard-card-footer {
+    background-color: #fafafa !important;
+    border-top: 1px solid #f5f3f3 !important;
+    display: none !important;
+}
+
+.dashboard-card {
+    margin-top: 1em !important;
+}
+
+/*--- @dashboard-end---*/
+
+/**  @tabs   --> Pestañas o tabs del tema @adaptable **/
+
+/*Ajustamos padding de tabs para que se mantengan en linea aún con botom de home*/
+@media (min-width: 1024px) {
+
+    .tabcontentcontainer label.dashboardtab,
+    .tabcontentcontainer label.coursetab {
+        font-size: 1.25em;
+        padding: 18px 37px;
+    }
+}
+
+
+.tabcontentcontainer div.linktab {
+    background-color: #fff;
+    border-top: none;
+    color: #333333;
+    font-size: 2.1em;
+    padding-top: 18px;
+}
+
+.tabcontentcontainer div.linktab:hover {
+    color: #0c5263;
+}
+
+/* Formato del contenido de TAB1 y TAB 2 - Intro de sección en vista individual*/
+#adaptable-course-tab-1 div.col-md-12,
+#adaptable-course-tab-2 div.col-md-12,
+div.course-content div.col-md-12.px-0.p-x-0.my-20 {
+    background-color: white;
+    margin-right: 7px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 8px #cecccc;
+    border-radius: 2px;
+    padding: 25px !important;
+}
+
+/*Portada del curso  imagen y pestañas*/
+div.cover-section {
+    background-color: white;
+    margin-right: 0px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 8px #cecccc;
+    border-radius: 2px;
+}
+
+/*Diseño de banner dinámico*/
+#course-banner {
+    min-height: 130px;
+    width: 100%;
+    text-align: center;
+}
+
+#course-banner div.program-name {
+    background-color: white;
+    margin: 0 22%;
+    min-height: 36px;
+    border-radius: 0px 0px 4px 4px;
+    box-shadow: 0 2px 2px 0 #2b2b2b66;
+    padding: 10px;
+    color: #444444;
+    font-size: 1.3em;
+}
+
+#course-banner div.course-title {
+    margin-top: 15px;
+    font-size: 1.6em;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #0c0c0c;
+    padding: 15px;
+}
+
+/*Fondo de pestaña activa*/
+.tabcontentcontainer input.coursetab:checked+label {
+    border-top: 4px solid #007b99;
+    color: #007b99;
+}
+
+.tabcontentcontainer {
+    background: #f9f9f9 !important;
+    padding: 20px !important;
+}
+
+/*Margen entre tab y banner del curso*/
+#coursetabcontainer section.adaptable-tab-section {
+    padding: 0px;
+    border-top: none;
+}
+
+/*Bloques al interior de los tab de ADAPTABLE en los cursos*/
+#page-course-view-remuiformat.pagelayout-course .container-fluid #region-main .card>.card-body:first-of-type {
+    background: #fbfbfb;
+}
+
+.coursetab:hover {
+    color: #344b50;
+}
+
+/*--- @tabs-end---*/
+
+/**  @banner --> Banner dinámico en los cursos (@adaptable) **/
+
+/*CSS para cargar la imagen que corresponda a cada programa*/
+.program,
+.program1,
+.program2,
+.program3,
+.program4,
+.program5,
+.program7,
+.program8,
+.program9,
+.program10,
+.program11,
+.program12,
+.program13,
+.program14,
+.program15,
+.program16,
+.program17,
+.program18,
+.program19,
+.program20,
+.program21,
+.program22,
+.program24 {
+    background-image: url("https://cdn.ucatolicaluisamigo.co/img/banner_curso_2302.jpg");
+}
+
+.program23,
+.program25 {
+    background-image: url("https://cdn.ucatolicaluisamigo.co/img/banner_curso_2302.jpg");
+}
+
+.program26,
+.program27,
+.program6 {
+    background-image: url("https://campus.ucatolicaluisamigo.edu.co/imagenes/mooc.png");
+}
+
+.program10-static {
+    background-image: url("https://campus.ucatolicaluisamigo.edu.co/imagenes/4.png");
+}
+
+.program6-static {
+    background-image: url("https://campus.ucatolicaluisamigo.edu.co/imagenes/EncuentroInvestigacion.png");
+}
+
+/*--- @banner-end---*/
+
+/**  @course --> Funcionalidades dentro de los cursos (independiente del formato) **/
+
+/*Elimino decoración de TAREAS, FOROS Y CUESTIONARIO en la página principal del curso*/
+.section li.modtype_assign div.activity-wrapper,
+.section li.modtype_quiz div.activity-wrapper,
+.section li.modtype_forum div.activity-wrapper {
+    box-shadow: none !important;
+    border-bottom: none !important;
+}
+
+/* diciembre 2022 @tictologo cambiar bordes en elementos de curso */
+.section li .ad-activity-wrapper {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/*Oculta la imagen de los cursos en la vista dentro de categorías*/
+.content .courseimage {
+    display: none;
+}
+
+/*ventana flotante agregar actividad o recurso*/
+.moodle-dialogue-base .moodle-dialogue-wrap.moodle-dialogue-content {
+    width: 75% !important;
+}
+
+/*Lista de cursos en categorías*/
+.coursebox>.info>.coursename a {
+    font-size: 14pt;
+}
+
+.courses .coursebox.collapsed {
+    padding: 0px;
+}
+
+.courses .coursebox {
+    background-color: white !important;
+}
+
+.coursebox .content .teachers {
+    margin: -5px 0px 0px 26px;
+}
+
+.coursebox .content .teachers li {
+    color: #007b99;
+    background: #f8f9fa;
+    margin-bottom: 10px;
+}
+
+.coursebox .moreinfo {
+    padding: 8px 0;
+    float: inherit;
+}
+
+/* Se ajusta en panel para elección de archivos*/
+.nav-pills .nav-link.active {
+    background-color: #eeeeef;
+}
+
+/*Lecciones - barra de botones en la parte inferior del contenido*/
+/** OJO, puede afectar otras páginas***/
+div.branchbuttoncontainer {
+    padding: 20px;
+    background-color: #fffae7;
+    margin-bottom: 20px;
+    text-align: center;
+    border-top: 2px solid #f7e9c1;
+}
+
+@media (min-width: 481px) {
+    .choosercontainer #chooseform .selected .typesummary {
+        font-size: 1.3em !important;
+    }
+}
+
+/*oculto información de campos personalizados en vista de cursos y categorías*/
+.customfields-container {
+    display: none;
+}
+
+/* Mensaje que muestra elementos # mensajes no vistos en foros */
+.path-course-view .unread {
+    margin-left: 5px;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+
+/*--- @course -end---*/
+
+/** @foros --> Foros (Módulo nativo de Moodle) **/
+
+/*Encabezado de entradas de foro sin leer*/
+
+.forumpost.unread .row.header {
+    background-color: #fff8e2;
+    padding-left: 15px;
+    padding-top: 20px;
+    border-bottom: 1px solid #f1e3d0;
+}
+
+/*Encabezado foro leído*/
+.forumpost .header {
+    padding: 20px 0 10px 20px;
+    background-color: #f5f5f5;
+    border-radius: 0 0 0 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+/*OCULTAR IMAGEN DE GRUPOS EN MENSAJES DE FOROS */
+div.author-groups-container {
+    display: none;
+}
+
+/*--- @foros-end---*/
+
+/**  @quiz --> Cuestionarios (@adaptable) **/
+/*Corrige error de visualización al editar detalles del examen en las preguntas*/
+#page-mod-quiz-edit ul.slots li.section li.activity .activityinstance {
+    position: relative;
+    left: 0em;
+}
+
+/*Cuenta regresiva reloj cuestionario*/
+#quiz-timer {
+    color: #f31b15;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/*--- @quiz-end---*/
+
+/**  @movil --> Estilos para Movil de Moodle (@adaptable) **/
+
+/*Menu hamburguesa para versión móvil*/
+#adaptable-page-header-wrapper #adaptable-page-header-nav-drawer button {
+    font-size: 1.8em;
+    color: #666;
+    padding-left: 10px;
+}
+
+@media (max-width: 767px) {
+    #adaptable-page-header-wrapper>#header2>div>div {
+        min-height: 72 !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .tabcontentcontainer label.coursetab {
+        padding: 20px 20px 20px 32px !important;
+    }
+}
+
+/*--- @movil-end---*/
+
+/**  @calendar --> Calendario (Módulo nativo de Moodle) **/
+
+/*Color EVENTO DE CURSO en calendario*/
+.calendar_event_course {
+    background-color: #ffedbf;
+}
+
+/*Ahora los eventos de GRUPO*/
+.calendar_event_group {
+    background-color: #a9d7ff;
+}
+
+.path-calendar .maincalendar .calendar_event_course {
+    border: none;
+}
+
+.box {
+    margin-top: 0px;
+    color: black;
+}
+
+/*Header en calendario, eventos próximos*/
+.calendar_event_course>div>h3 {
+    font-size: 15pt !important;
+    margin: 0 0 4px;
+}
+
+.card-header {
+    padding: 0.2rem 1.25rem;
+}
+
+/*Bloque de eventos próximos*/
+.multiblock-columns-2-66-33 .col-md-4 section {
+    background-color: #fafafa !important;
+    border: 1px solid #f3f3f3 !important;
+    -webkit-box-shadow: -5px 4px 6px -6px rgba(0, 0, 0, 0.2);
+    box-shadow: -5px 4px 6px -6px rgba(0, 0, 0, 0.2) !important;
+}
+
+/*--- @calendar-end---*/
+
+/** @grades --> Calificaciones (@adaptable)  **/
+
+/*Libro de calificaciones --> Oculto descripción del cálculo en los totales de categoría*/
+.gradeitemdescription {
+    display: none;
+}
+
+/* Se ajusta el ancho predeterminado del ancho de columna del FEEDBACK en el libro de calificaciones */
+td.level3.levelodd.item.b1b.feedbacktext.column-feedback {
+    width: 35%;
+}
+
+/*Ajuste en el fondo del libro de calificaciones // vista del estudiante */
+.path-grade-report-user .user-grade.generaltable .levelodd {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/*--- @grades-end---*/
+
+/**  @alertas --> Componente de @adaptable **/
+
+/* Alertas adaptable */
+.customalert {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/*ESTILOS PARA ALERT BOOSTRAP TIPO WARNING*/
+.alert-warning {
+    color: #523e23;
+    background-color: #fff8e4;
+    border-color: #fbe8cd;
+    text-align: justify;
+    line-height: 15pt;
+    border-radius: 5px;
+}
+
+.alert-success {
+    color: #262926;
+    background-color: #f1ffd8;
+    border: 1px solid #ececec;
+    margin-bottom: 15px !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+/*--- @alertas-end---*/
+
+/**  @portada --> Página de inicio de Moodle (@adaptable) **/
+
+/*Oculta barra de info en diapositivas de página principal de moodle*/
+.flex-caption {
+    display: none;
+}
+
+/*Margen superior del footer*/
+#page-footer .info {
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+/*BANNER PORTADA CON ICONOS DE SERVICIOS*/
+/*Esto fue maquetado por Alejandro Restrepo el 1/10/2020*/
+
+.context {
+    background: -webkit-linear-gradient(top,
+            rgba(230, 230, 230, 1) 0%,
+            rgba(241, 241, 241, 1) 2%,
+            rgba(244, 244, 244, 1) 3%,
+            rgba(247, 247, 247, 1) 6%,
+            rgba(250, 250, 250, 1) 8%,
+            rgba(255, 255, 255, 1) 100%);
+}
+
+.contint {
+    max-width: 1170px;
+}
+
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.separador {
+    margin-top: 45px;
+    border-right: 1px solid #d6d6d6;
+    height: 80px;
+    align-content: center;
+}
+
+.texto {
+    font-size: 16px;
+    color: black;
+}
+
+#theinfo.container {
+    width: 100%;
+}
+
+/* botones dentro de acordion Bootstrap en home del campus*/
+#accordion button.btn-link {
+    background-color: inherit !important;
+}
+
+/*resuelve el problema de que los modales mostraban contenido al 75%*/
+.moodle-dialogue-base .moodle-dialogue-wrap.moodle-dialogue-content {
+    width: 100% !important;
+}
+
+/*--- @portada-end---*/
+
+/**  @survey --> Módulo de encuestas de Moodle **/
+
+.path-mod-feedback .feedback_form .col-form-label {
+    display: block !important;
+    background-color: #f3f7fb;
+    font-weight: bold;
+}
+
+/*Oculta anuncio de que se guardan datos de usuario*/
+#fitem_id_anonymousmode {
+    display: none;
+}
+
+/*---  @survey-end---*/
+
+/**  @login --> Página y botones de login en Moodle **/
+
+/*página de login*/
+#page-login-index .card {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* Ocultar enlace de recuperación de contraseña en la página de login */
+.forgetpass {
+    display: none !important;
+}
+
+/*Boton de Google en Página de Login*/
+.potentialidplist>.potentialidp>a {
+    background-color: #db4747;
+}
+
+/*Boton de login en portada del campus*/
+
+.ucla-login {
+    margin-top: -8px;
+    margin-right: 10px;
+}
+
+@media (max-width: 620px) {
+    .ucla-login {
+        padding-top: 15px;
+        width: 150px;
+        margin-right: 150px;
+    }
+}
+
+.ucla-login a {
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #4a424a;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 15px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+}
+
+.ucla-login a:hover {
+    background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    background-color: #e9e9e9;
+}
+
+.ucla-login:active {
+    position: relative;
+    top: 1px;
+}
+
+#adaptable-page-header-wrapper #header2 a i {
+    color: #fb5a57;
+    margin-right: 10px;
+}
+
+#header2 .row {
+    margin: 0 0 0 -10px;
+    min-height: 85px;
+}
+
+
+/*Alinear boton de busqueda con boton de login en header*/
+
+#adaptable-page-header-wrapper #header2 .search-input-wrapper {
+    margin-top: -15px !important;
+}
+
+/*--- @login-end---*/
+
+/**  @perfil --> Perfil de usuario (@adaptable) **/
+
+/*Espacio entre ítems de opciones de perfil de usuario*/
+
+#page-user-profile .node_category li,
+.path-user .node_category li {
+    margin-top: 0px;
+}
+
+/*Estilos de pestañas en perfil de usuario*/
+
+
+.tabcontentcontainer input.adaptabletab:checked+label {
+    background-color: #007b99;
+    border-color: #007b99;
+}
+
+#adaptable_profile_tree .adaptable-tab.tab-panel {
+    border-top: 4px solid #007b99;
+}
+
+.tabcontentcontainer label.adaptabletab {
+    background-color: #f5f5f5;
+}
+
+/*borde redondeado en etiquetas de las pestañas (perfil de usuario)*/
+.tabcontentcontainer input.adaptabletab:checked+label {
+    border-radius: 5px 5px 0px 0px;
+}
+
+/* pestañas no seleccionadas */
+.tabcontentcontainer label.adaptabletab {
+    background-color: #e6e6e6;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #dedede;
+}
+
+/* Contenido de las pestañas en el perfil de usuario*/
+#aboutme:checked~#adaptable-tab-aboutme,
+#adaptable-tab-coursedetails,
+#adaptable-tab-more,
+#adaptable-tab-editprofile {
+    padding: 20px;
+    background: white;
+    border-radius: 0px 0px 5px 5px;
+    -webkit-box-shadow: 4px 4px 4px 2px rgb(140, 140, 140, 0.14);
+    box-shadow: 4px 4px 4px 2px rgb(140, 140, 140, 0.14);
+}
+
+/* Acomodar el nombre del usuario en su perfil*/
+#adaptable_profile_tree .ucol1 .node_category.contact .firstname,
+#adaptable_profile_tree .ucol1 .node_category.contact .fullname {
+    padding-top: 50px;
+}
+
+/*Acomodar la foto del usuario en su perfil*/
+#adaptable_profile_tree .ucol1 .adaptableuserpicture a img.userpicture {
+    margin: 10px !important;
+}
+
+
+/*--- @perfil-end---*/
+
+/*--- @config ---*/
+
+/*Titulo de las secciones en los formularios de configuración*/
+legend {
+    color: black;
+    background: #f7f7f7;
+    padding: 5px;
+}
+
+/*Separador entre secciones de formularios*/
+.mform fieldset {
+    margin-bottom: .3rem;
+    border-bottom: none;
+}
+
+/*--- @config-end ---*/
+
+/*--- @modal ---*/
+
+/*altura del selector de actividades en los cursos*/
+.modal-body {
+    max-height: 570px;
+}
+
+
+.modal-dialog .modal-content {
+    border: 1px solid #7e8284 !important;
+    border-radius: 5px;
+}
+
+*:focus {
+    outline: none;
+}
+
+/*--- @modal-end ---*/
+
+/**  @forms --> Estilos para formularios a nivel de sitio  **/
+
+/* Apariencia de textbox y select*/
+.form-inline input.form-control[type=text],
+.custom-select {
+    border-radius: 4px;
+    height: 32px;
+    border-color: #c7c7c7;
+}
+
+/* Ancho por defecto del input*/
+.form-inline input.form-control[type=text] {
+    min-width: 100%;
+}
+
+#searchform_search {
+    min-width: 75% !important;
+}
+
+/* Altura de botones de edición de rúbrica*/
+#page-grade-grading-manage .actions .action {
+    height: 100%;
+}
+
+/*--- @forms-end---*/
+
+/*--- @adaptable-end---*/
+
+/*°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+------------------- PARTE 2 - FORMATOS DE CURSO ---------------------
+--------------------------------------------------------------------*/
+
+/***:::::::::::::: @edwiser --> Formato de Curso "Edwiser" ::::::::::::::::***/
+/* TODO: revisar si se requiere segmentar los estilos de Edwiser
+
+/*Cambiar texto blanco por gris oscuro en sección 0 edwiser formats*/
+.text-white * {
+    color: #555 !important;
+}
+
+/*Ocultar titulo de seccion 0*/
+.wdm-generalsectiontitle {
+    display: none;
+}
+
+/* Cambiar tamaño de íconos de actividad/recurso en módulo 0*/
+.section.first-section .activityinstance .iconlarge.activityicon {
+    width: 50px;
+    height: 50px;
+}
+
+/*Disminuye en .1 el tamaño relativo del título de las actividades*/
+.section .activity .contentwithoutlink>a>span,
+.section .activity .activityinstance>a>span,
+.section .activity .contentwithoutlink .inplaceeditable>a>span,
+.section .activity .activityinstance .inplaceeditable>a>span {
+    font-size: 1em;
+}
+
+/*Cambia el color del texto en el título de las actividades y recursos de curso*/
+.section .activity .contentwithoutlink>a,
+.section .activity .activityinstance>a,
+.section .activity .contentwithoutlink .inplaceeditable>a,
+.section .activity .activityinstance .inplaceeditable>a {
+    color: #65656e;
+}
+
+/*Elimina borde redondeado y aumenta altura de barra de progreso en módulo 0 del curso*/
+.general-section-card-details .progress,
+.first-section-li .progress {
+    border-radius: unset;
+    height: 20px;
+}
+
+/*Aumenta tamaño de valor de porcentaje de avance*/
+.progress {
+    font-size: 0.9rem;
+}
+
+/*Color de relleno de progreso en barra de módulo 0*/
+.bg-green-600 {
+    background-color: #f79e2b !important;
+}
+
+/*Cambia el color del texto de las etiquetas en los cursos (módulo etiqueta)*/
+div.activity-wrapper {
+    color: #373a3c;
+    text-align: justify;
+}
+
+/*Titulo de sección Edwiser*/
+ul.remui-format-list h4.sectionname {
+    font-size: 25px;
+    padding: 7px 0px 0px;
+}
+
+/* Ubica casilla de finalización al final del texto del recurso o actividad*/
+.section .activity .actions-right .actions {
+    position: relative;
+    padding-left: 15px;
+}
+
+li.activity div.actions-right {
+    display: contents;
+}
+
+.section .activity .actions {
+    display: contents;
+}
+
+.section .activity .activityinstance {
+    min-width: auto;
+}
+
+.path-course-view li.activity span.autocompletion img {
+    margin-left: 15px;
+}
+
+
+/* Ajustar espacio entre recursos de módulos*/
+div.activity-wrapper {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul.remui-format-list li.section ul.section li.activity {
+    padding: 6px 0 !important;
+}
+
+/*Quitar linea horizontal divisoria*/
+ul.remui-format-list li.section ul.section li.activity {
+    border-bottom: none;
+}
+
+/*Estilo de mensaje de alerta de restricción*/
+#page-course-view-remuiformat ul.remui-format-list .section .activity .availabilityinfo {
+    margin-left: 30px;
+    /* margin-right: auto; */
+    background-color: #fff7dc;
+    border: 1px solid #fff3cd;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    line-height: 12px;
+}
+
+.section .activity .availabilityinfo {
+    margin-top: 0px;
+}
+
+/*Estilo de mensaje de alerta de restricción*/
+#page-course-view-remuiformat ul.remui-format-list .section .activity .availabilityinfo {
+    margin-left: 30px;
+    /* margin-right: auto; */
+    background-color: #fff7dc;
+    border: 1px solid #fff3cd;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    line-height: 12px;
+}
+
+.section .activity .availabilityinfo {
+    margin-top: 0px;
+}
+
+/*Botón de restricción en actividades*/
+#page-course-view-remuiformat ul.remui-format-list .isrestricted .badge {
+    background-color: #ff9359;
+    color: #fff;
+    padding: 3px 8px 3px 8px;
+    margin-top: 3px;
+    line-height: 20px;
+}
+
+/*Restricciones de sección*/
+.availabilityinfo {
+    background-color: #fff9df;
+    padding: 8px;
+    line-height: 12px;
+    margin-bottom: 10px;
+    font-size: 85%;
+    border-radius: 7px;
+}
+
+/*Subtittulo de seccion módulo edwiser - regla integrada al plugin*/
+.mlopez1092 {
+    box-shadow: 0 8px 8px -8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    margin-left: -5px;
+    padding-left: 7px;
+}
+
+/* Estilos adicionales al formato REMUI EDWISER, despues de la actualización*/
+#section-0,
+#section-info {
+    box-shadow: 0 0 8px #e8e8e8;
+    border-radius: 2px;
+    flex: content;
+    background-color: white;
+}
+
+#section-info .labeldates {
+    line-height: 20px;
+    color: #848484;
+}
+
+#section-info .startdate {
+    color: #4c4c4c;
+    font-weight: bold;
+}
+
+#section-info .enddate {
+    color: #ff8d50;
+    font-weight: bold;
+}
+
+#section-info .separator {
+    border-left: solid 1px #e4e4e4;
+    max-height: 40px;
+}
+
+#section-info .teachers {
+    margin-left: -1em;
+}
+
+#section-info .labelprogress {
+    line-height: 20px;
+    color: #848484;
+    margin-right: -15px;
+}
+
+#section-info .resume {
+    margin-left: -1.5em;
+}
+
+
+@media screen and (max-width: 900px) {
+    #section-info .labelprogress {
+        display: none;
+    }
+
+    #section-info .resume {
+        display: none;
+    }
+
+    #section-info .teachers {
+        margin-left: -1.5em;
+    }
+
+    #section-info .c100 {
+        margin-left: 0.5em !important;
+    }
+}
+
+/*Separación de botón para agregar nueva actividad*/
+#page-course-view-remuiformat div.section-modchooser {
+    padding: 1em;
+    text-align: center;
+}
+
+#page-course-view-remuiformat div.section-modchooser span.section-modchooser-link {
+    background-color: #f7f7f7;
+    height: 45px;
+    font-size: 1.3em;
+    color: #243033 !important;
+    -webkit-box-shadow: 0 0 8px #ddd;
+    box-shadow: 0 0 4px #b7b7b7dd;
+    border-radius: 5px;
+}
+
+#page-course-view-remuiformat span.section-modchooser-link a,
+#page-course-view-remuiformat span.section-modchooser-link a:hover,
+#page-course-view-remuiformat span.section-modchooser-link .fa.fa-plus {
+    color: #3e3e3e;
+}
+
+#page-course-view-remuiformat div.section-modchooser span:hover {
+    background-color: #fff !important;
+    color: #3e3e3e !important;
+    height: 45px;
+}
+
+#page-course-view-remuiformat div.section-modchooser span a {
+    border: none;
+}
+
+#page-course-view-remuiformat span.section-modchooser-link a {
+    color: #243033;
+}
+
+/*Nombre de las secciones del curso, se aplica en el NOMBRE DEL CURSO - agregado en modificacion del plugin*/
+.tituloSeccion {
+    text-align: center;
+    font-size: 1.5em;
+    color: #5c5b5b;
+    margin-bottom: 15px;
+    padding: 15px;
+    -webkit-box-shadow: 0px 8px 8px -5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 8px 8px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 8px -5px rgba(0, 0, 0, 0.1);
+}
+
+/*Secciones de los cursos*/
+h2.section-title,
+h2.single-section-title,
+h4.sectionname {
+    color: #4e4d4d;
+    font-family: "Staatliches", cursive;
+    margin: 10px 0px !important;
+    font-size: 22px !important;
+}
+
+h2.section-title:hover {
+    color: #484747;
+}
+
+h2.section-title:hover:after {
+    content: " »";
+}
+
+/*Lista de actividades y su cantidad que conforman el módulo*/
+.section-summary-activities {
+    padding-bottom: 20px !important;
+}
+
+/*barra de progreso de sección en página principal del curso*/
+.progress-bar-section {
+    margin-bottom: -1rem !important;
+    width: inherit;
+    background-color: #9edec0 !important;
+    height: 12px !important;
+    border-top: solid 2px #9adabc;
+}
+
+/*Texto que indica número actividades pendientes o invitacióna empezar módulo*/
+.section-action-container .progress-text {
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+/*Tarjeta de descipción-introducción a la sección vista individual*/
+div.course-content div.col-md-12.px-0.p-x-0.my-20 {
+    background-color: white;
+    margin-right: 7px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 8px #cecccc;
+    border-radius: 2px;
+    padding: 25px !important;
+}
+
+/*Margen interna en contenidos del módulo*/
+.course-content ul.remui-format-list li.section .content {
+    padding: 20px;
+}
+
+/*padding derecho para la vista de edición del módulo*/
+.editing .section .activity .contentwithoutlink,
+.editing .section .activity .activityinstance {
+    padding-right: 5%;
+}
+
+i.fa.float-right i.fa.fa-angle-down {
+    font-size: 2.5em !important;
+}
+
+/*Mostrar / ocultar contenido en formato remui, vista todo en una misma mágina*/
+.show-hide-content {
+    font-family: Roboto Condensed !important;
+    margin-left: 7px;
+}
+
+/*permito que el total de actividades pendientes sea visible en secciones tipo card*/
+.section-action-container .progress-text {
+    visibility: unset;
+}
+
+/*Ancho de la barra de progreso por sección en Edwiser Formats*/
+.format-remuiformat.pagelayout-course .progress-xs {
+    margin: 10px -16px;
+    border-radius: 0px;
+}
+
+/*--- @edwiser-end---*/
+
+/*°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+-------------------- PARTE 3 - CSS PLUGINS --------------------------
+--------------------------------------------------------------------*/
+
+/***::::::::::::::  @mail --> Plugin de Correo para Moodle ::::::::::::::::***/
+
+/*Oculto temporalmente icono de mail*/
+#nav-mail-popover-container {
+    display: block !important;
+}
+
+/* Tamaño letra y ancho de menu desplegable */
+.popover-region-mail .popover-region-container {
+    width: 300px !important;
+    font-size: 105%;
+}
+
+/*Encabezado del menú desplegable*/
+.popover-region-mail .popover-region-header-container {
+    line-height: 2em !important;
+    height: 2.3em !important;
+    background-color: #f1f1f1;
+    border: 2px solid #eaeaea;
+}
+
+/*titulo del encabezado del menu desplegable*/
+.popover-region-mail .popover-region-header-text {
+    font-weight: 900 !important;
+    color: #2b2d2f;
+    font-size: 0.94em;
+}
+
+/* Botón redactar */
+a.mail-navbar-menu-compose-link {
+    margin-right: 0em;
+    background-color: #d82626;
+    padding: 0 6px;
+    color: #fff !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    line-height: 22px;
+    font-size: .92em;
+}
+
+/* Contenedor de botones de accion de panel del coreo*/
+.popover-region-header-actions {
+    float: right;
+    margin-top: -6px;
+}
+
+/* Texto de contador de mensajes*/
+/*OJO Afecta los bags de otras págiinas, como la lista de participantes del curso*/
+.badge,
+.count-container {
+    background-color: #fcdc51;
+    color: black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/*Etiquetas de filtros*/
+.form-autocomplete-selection [data-active-selection=true] {
+    font-size: small;
+}
+
+/*Tamaño de texto del contador de mensajes*/
+a.mail-navbar-menu-item .badge {
+    font-size: .8em;
+}
+
+/* Color del elemento del menú activo*/
+.mail-navbar-menu-item-active {
+    background-color: #fff7d1;
+}
+
+/* Remitente del mensaje DIV con nombre y foto al seleccionar destinatarios*/
+.mail_recipient {
+    float: left;
+    border: 1px solid #eaeaea;
+    margin: 0 0.5em 0.5em 0 !important;
+    background-color: #f7f7f7;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    padding-left: 5px;
+}
+
+/* Tabla con lista de mensajes */
+
+.mail_list {
+    background-color: #f3f3f3 !important;
+    border: 1px solid #bfbfbf;
+    font-size: 0.95em;
+}
+
+/*Label personalizada */
+
+.mail_label {
+    font-size: 0.9em !important;
+    font-weight: normal !important;
+}
+
+/*label de codigo de curso de origen del mensaje*/
+.mail_course {
+    background-color: #fff9da !important;
+    font-weight: normal !important;
+    font-size: .87em !important;
+}
+
+/*mensaje no leido - estilo de renglon completo*/
+.mail_list .mail_unread {
+    background-color: white !important;
+}
+
+/*espacio para texto del asunto en la bandeja de recibidos*/
+.mail_list .mail_summary {
+    width: 50% !important;
+}
+
+/* TODO oculta la función de marcar como leido automáticamente*/
+#id_markasread {
+    display: none;
+}
+
+/*--- @mail-end---*/
+
+/***::::::::::::::  @atto --> Editor Atto ::::::::::::::::***/
+
+.attostylesbox {
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Color de texto en fondo solido*/
+.attostylesbox.attostylesbox-solid {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px #000000;
+    font-size: 1.1em;
+}
+
+.attostylesbox.attostylesbox-outline {
+    background-color: white;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.attostylesbox.attostylesbox-callout {
+    background-color: white;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+}
+
+.attostylesbox.attostylesbox-solid-blue {
+    background-color: #7d9fd3;
+}
+
+.attostylesbox.attostylesbox-solid-green {
+    background-color: #98ca3e;
+}
+
+.attostylesbox.attostylesbox-solid-yellow {
+    background-color: #ff9836;
+}
+
+.attostylesbox.attostylesbox-solid-red {
+    background-color: #e1114f;
+}
+
+.attostylesbox.attostylesbox-solid-black {
+    background-color: #f7f7f7;
+    color: #007b99;
+    text-shadow: none;
+}
+
+.attostylesbox.attostylesbox-outline-blue {
+    border-color: #7d9fd3;
+    color: #7d9fd3;
+}
+
+.attostylesbox.attostylesbox-outline-green {
+    border-color: #98ca3e;
+    color: #98ca3e;
+}
+
+.attostylesbox.attostylesbox-outline-yellow {
+    border-color: #ffcf35;
+    color: #000000;
+    font-size: 1.15em;
+}
+
+.attostylesbox.attostylesbox-outline-red {
+    border-color: #ef4540;
+    color: #ef4540;
+}
+
+.attostylesbox.attostylesbox-outline-black {
+    border-color: #3a3a3a;
+    color: #3a3a3a;
+}
+
+.attostylesbox.attostylesbox-callout-blue {
+    border-left-color: #7d9fd3;
+}
+
+.attostylesbox.attostylesbox-callout-orange {
+    border-left-color: #ff9d68;
+}
+
+.attostylesbox.attostylesbox-callout-green {
+    border-left-color: #98ca3e;
+}
+
+.attostylesbox.attostylesbox-callout-yellow {
+    border-left-color: #ffcf35;
+}
+
+.attostylesbox.attostylesbox-callout-red {
+    border-left-color: #ef4540;
+}
+
+.attostylesbox.attostylesbox-callout-black {
+    border-left-color: #3a3a3a;
+}
+
+.attostylestextmarker {
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.attostylestextmarker.attostylestextmarker-green {
+    background: #befddd;
+}
+
+.attostylestextmarker.attostylestextmarker-pink {
+    background: #ffe5c5;
+}
+
+.attostylestextmarker.attostylestextmarker-yellow {
+    background: #ffffa8;
+}
+
+/*--- @atto-end---*/
+
+/***::::::::::::::  @osticket --> Bloque de Mesa de Ayuda (plugin interno) ::::::::::::::::***/
+
+/*Pestañas del bloque de la mesa de ayuda*/
+.tabma {
+    font-family: Roboto Condensed !important;
+    margin-left: 7px;
+}
+
+/*--- @osticket-end---*/
+
+/***::::::::::::::  @NewsSlider --> Módulo en área personal (plugin) ::::::::::::::::***/
+
+/*Slide de noticias en area personal - News slider*/
+
+.slider-banner-col,
+.slider-col {
+    background-color: #fdfdfd;
+}
+
+.slider-banner-col:before {
+    content: url("https://campus.ucatolicaluisamigo.edu.co/imagenes/anuncio2.gif");
+    background-size: 300px 100px;
+}
+
+.slider-message {
+    color: #5a6669;
+}
+
+@media only screen and (min-width: 1024px) {
+    .slider-col {
+        width: 88%;
+    }
+}
+
+slider-banner-col span {
+    display: none;
+}
+
+div.block_news_slider {
+    -webkit-box-shadow: 0px 5px 8px -7px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 5px 8px -7px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 8px -7px rgba(0, 0, 0, 0.2) !important;
+    background-color: #fdfdfd !important;
+}
+
+@media only screen and (min-width: 1024px) {
+    .slider-banner-col {
+        width: 12%;
+    }
+}
+
+/*--- @NewsSlider-end---*/
+
+/***::::::::::::::  @SQLreports --> Informes personalizados (Módulo instalado por David Herney) ::::::::::::::::***/
+
+#page-admin-report-customsql-index #region-main h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #aaa;
+}
+
+#page-admin-report-customsql-index #region-main h2 .reportcounts {
+    font-size: 14px;
+}
+
+#page-admin-report-customsql-index #region-main h3 {
+    font-size: 15px;
+}
+
+#page-admin-report-customsql-index .csql_category_reports {
+    padding: 10px;
+    border: 1px solid #bbb;
+}
+
+#page-admin-report-customsql-index .csql_category_reports p {
+    border-bottom: 1px dashed #bbb;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+#page-admin-report-customsql-index .csql_category_reports p a {
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #00abaf;
+    margin-bottom: 10px;
+}
+
+/*--- @SQLreports-end---*/
+
+/**  @PDFAnotation --> Módulo de lectura colaborativa con PDF  **/
+
+.path-mod-pdfannotator .chat-message-container,
+.path-mod-pdfannotator .chat-message.questions.page,
+.path-mod-pdfannotator .chat-message.questions:not(.page),
+.path-mod-pdfannotator #myarea {
+    font-size: 1.3em;
+}
+
+/*--- @PDFAnotation-end---*/
+
+/*°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+---------------- PARTE 4 - ESTILOS PESONALIZADOS --------------------
+--------------------------------------------------------------------*/
+/***:::::::::::::: @dicom --> Estilos heredados de DICOM ::::::::::::::::***/
+
+/* TODO: optimizar estas reglas, verificar cuales no se requieren  */
+
+.etiqueta {
+    margin-top: 15px;
+    padding-bottom: 5px;
+    min-height: 35px;
+    border-top: 1px solid #eeeeee;
+    color: #1f538f;
+    font-size: 19px;
+    font-weight: bold;
+    padding-left: 33px;
+    padding-top: 19px;
+    font-weight: 600;
+}
+
+.etiquetaX {
+    padding-bottom: 5px;
+    min-height: 35px;
+    color: #1f538f;
+    font-size: 19px;
+    font-weight: bold;
+    padding-left: 33px;
+    padding-top: 20px;
+    font-weight: 600;
+}
+
+.etiqueta:hover {
+    color: #2567af;
+}
+
+.infoCurso,
+.infoCursoX {
+    /*Etiqueta "Presentación del curso y del tutor" en la unidad 0*/
+    background: url('https://campus.ucatolicaluisamigo.edu.co/imagenes/dicom/infoCurso.gif') 0px 18px no-repeat;
+    border-top: none !important;
+    margin-top: 0px !important;
+}
+
+.infoCurso:after {
+    /*Etiqueta "Presentación del curso y del tutor" en la unidad 0*/
+    content: " Información básica del curso";
+}
+
+.aulaVirtual,
+.aulaVirtualX {
+    /*Etiqueta "Presentación del Aula Virtual" en la unidad 0*/
+    background: url('https://campus.ucatolicaluisamigo.edu.co/imagenes/dicom/aulaVirtual.gif') 0px 18px no-repeat;
+}
+
+.aulaVirtual:after {
+    /*Etiqueta "Presentación del Aula Virtual" en la unidad 0*/
+    content: " Presentación del aula virtual";
+}
+
+.previasU0,
+.previasU0X {
+    /*Etiqueta "Actividades Previas a la Unidad 1" en la unidad 0*/
+    background: url('https://campus.ucatolicaluisamigo.edu.co/imagenes/dicom/previasCurso.gif') 0px 18px no-repeat;
+}
+
+.previasU0:after {
+    /*Etiqueta "Actividades Previas a la Unidad 1" en la unidad 0*/
+    content: " Actividades previas a la unidad 1";
+}
+
+.lecciones,
+.leccionesX {
+    /*Etiqueta "Desarrollo Temático" en cada unidad de aprendizaje*/
+    background: url('https://campus.ucatolicaluisamigo.edu.co/imagenes/dicom/lecciones.gif') 0px 18px no-repeat;
+}
+
+.lecciones:after {
+    /*Etiqueta "Desarrollo Temático" en cada unidad de aprendizaje*/
+    content: " Desarrollo temático de la unidad";
+}
+
+.lecturas {
+    /*Etiqueta "Lecturas Complementarias" en cada unidad de aprendizaje*/
+    background: url('https://campus.ucatolicaluisamigo.edu.co/imagenes/dicom/lectocomplemento.gif') 4px 24px no-repeat;
+}
+
+.lecturas:after {
+    /*Etiqueta "Lecturas Complementarias" en cada unidad de aprendizaje*/
+    content: "Lecturas complementarias";
+    font-size: 18px;
+    color: #2867ad;
+}
+
+.foros {
+    /*Etiqueta "Foros de Discusión e Interacción" en cada unidad de aprendizaje*/
+    background: url('https://campus.ucatolicaluisamigo.edu.co/imagenes/dicom/foros.gif') 0px 18px no-repeat;
+}
+
+.forosX {
+    /*Etiqueta "Foros de Discusión e Interacción" en cada unidad de aprendizaje*/
+    background: url('https://campus.ucatolicaluisamigo.edu.co/imagenes/dicom/foros.gif') 0px 18px no-repeat;
+}
+
+.foros:after {
+    /*Etiqueta "Actividades de Discusión e Interacción" en cada unidad de aprendizaje*/
+    content: " Actividades de interacción y debate";
+}
+
+.evidencias,
+.evidenciasX {
+    /*Etiqueta "Evidencias de Aprendizaje" en cada unidad */
+    background: url('https://campus.ucatolicaluisamigo.edu.co/imagenes/dicom/evidencias.gif') 5px 14px no-repeat;
+}
+
+.evidencias:after {
+    /*Etiqueta "Evidencias de Aprendizaje" en cada unidad */
+    content: " Evidencias de aprendizaje";
+}
+
+/* FOROS**/
+#descripcionForo {
+    /*Texto de introducción genérico al foro conozcámonos*/
+    background: url('https://campus.ucatolicaluisamigo.edu.co/imagenes/dicom/foroNovedades.gif') no-repeat;
+    padding: 0px 25px 20px 100px;
+    text-align: justify;
+    margin-left: 15px;
+}
+
+#descripcionForoUnidad {
+    /*Texto de introducción genérico al foro de unidad mlopez04/07/2018/ */
+    background: url('https://campus.ucatolicaluisamigo.edu.co/imagenes/dicom/foroNovedades.gif') no-repeat;
+    padding: 0px 25px 20px 100px;
+    text-align: justify;
+    margin-left: 15px;
+}
+
+/*Texto del módulo 0 con mensaje para el tutor y el estudiante*/
+.introCurso {
+    text-align: justify;
+    padding: 10px 30px 0px;
+}
+
+/*--- @dicom-end---*/
+
+/***::::::::::::::  @html --> Reglas generales para elementos html   ::::::::::::::::***/
+
+/*Estilos para iframe*/
+iframe {
+    border: 0px;
+}
+
+#contentframe {
+    border: none;
+}
+
+/*Selección de texto o contenidos en la página*/
+::selection {
+    color: #000;
+    background-color: #d1f6ff;
+}
+
+textarea {
+    width: 95% !important;
+    height: 130px;
+}
+
+/*Enlaces*/
+a,
+a:visited,
+.tabtree .tabrow0 li a {
+    color: #353535;
+}
+
+/*Hover en enlaces de texto*/
+a:hover,
+a:active {
+    color: #007b99;
+}
+
+/*Ancho fijo del input en formulario*/
+.form-control {
+    display: block;
+    width: 100%;
+}
+
+h5 {
+    font-weight: bolder !important;
+}
+
+/*Corrije estilos anómalos en FOCUS de enlaces, después de actualizar a #moodle3.9 afecta estilos estándar de Booststap*/
+.aalink.focus,
+#page-footer a:not([class]).focus,
+.arrow_link.focus,
+a:not([class]).focus,
+.activityinstance>a.focus,
+.aalink:focus,
+#page-footer a:not([class]):focus,
+.arrow_link:focus,
+a:not([class]):focus,
+.activityinstance>a:focus {
+    outline: .2rem solid transparent;
+    /*color: inherit;*/
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.aabtn.focus,
+.btn-link.focus,
+.nav-link.focus,
+.atto_link_button.focus,
+[role="button"].focus,
+.list-group-item-action.focus,
+input[type="checkbox"].focus,
+input[type="radio"].focus,
+input[type="file"].focus,
+input[type="image"].focus,
+.sr-only-focusable.focus,
+a.dropdown-toggle.focus,
+.modal-dialog[tabindex="0"].focus,
+.moodle-dialogue-base .closebutton.focus,
+button.close.focus,
+.form-autocomplete-selection.focus,
+.aabtn:focus,
+.btn-link:focus,
+.nav-link:focus,
+.atto_link_button:focus,
+[role="button"]:focus,
+.list-group-item-action:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
+input[type="file"]:focus,
+input[type="image"]:focus,
+.sr-only-focusable:focus,
+a.dropdown-toggle:focus,
+.modal-dialog[tabindex="0"]:focus,
+.moodle-dialogue-base .closebutton:focus,
+button.close:focus,
+.form-autocomplete-selection:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    /*background-color: #f3f3f3;*/
+
+}
+
+/*--- @html-end---*/
+
+/* AJUSTES A CSS PARA ACTUALIZACIÓN DE JULIO DE 2021  */
+
+
+/*HEADER*/
+
+/*Iconos de notificaciones y buzón en una misma linea*/
+.m-1 {
+    margin: 0px !important;
+}
+
+/* Boton de activar edición*/
+#editingbutton .btn,
+#editingbutton input[type="submit"] {
+    background-image: none;
+    background-color: #5cb85c;
+    color: #fff !important;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 10px;
+}
+
+/*Margen de secciones de curso*/
+.tabcontentcontainer .tab-panel {
+    margin-right: 0px;
+}
+
+/*Eliminar margen de navegacion con miga de pan*/
+#page-second-header {
+    padding: 0px !important;
+    margin-left: 35px;
+}
+
+/*Quitar margen izquierdo de los bloques*/
+.flex-row #block-region-side-post {
+    padding-left: 0;
+}
+
+/*Quito padding superior que separa de breadcrumb*/
+#region-main {
+    padding-top: 0px !important;
+}
+
+.coursetab:active {
+    color: #ca3120;
+}
+
+/* ocultar opción de restaurar copia de seguridad como nuevo curso*/
+
+.bcs-new-course,
+.bcs-existing-course {
+    display: none !important;
+}

@@ -1,0 +1,54 @@
+body{
+    margin: 0 ;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+header{
+    background: url(images/bg_cabezote.jpg) bottom repeat-x;
+    height: 230px;
+}
+.container{
+    width: 950px;
+   
+    margin: 0 auto;
+}
+#logo{
+    background: url(images/logo_corporacion_diafora.png) no-repeat;
+    height: 180px;
+    width: 280px;
+    }
+
+    #logo a{
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    #logo h1{
+        display: none;
+    }
+    .mainmenu{
+        width: 250px;
+        background: #feb228;
+        display:inline-block ;
+        vertical-align: top;
+    }
+    .mainmenu ul{
+        margin: 0;
+        padding: 0;
+        list-style: none ;
+    }
+    .mainmenu ul li{
+        color: #fff;
+        text-indent: 15px;
+        padding: 6px 0;
+        border-bottom: dotted #fff 1px;
+    }
+    .mainmenu ul li:hover{
+background: red;
+    }
+    .banner{
+        display:inline-block ;
+        margin-left: 40px;
+    }
+
+    section

@@ -1,0 +1,143 @@
+.nombreColor{
+    color: red;
+    color: green;
+    color: blue;
+    color: white;
+    color: black;
+    color: gray;
+    color: orange;
+
+}
+
+.coloresRGB{
+    color: rgb(red, green, blue);
+    color: rgb(255, 0, 0);
+    color: rgb(0, 255, 0);
+    color: rgb(0, 0, 255);
+    color: rgb(255, 255, 255);
+    color: rgb(0, 0 ,0);
+    color: rgb(70, 70, 70);
+    color: rgb(200, 200, 200);
+    color: rgb(251, 160, 0);
+}
+
+.coloresHexadecimales{
+    color: #123456;
+    color: #FF0000;
+    color: #00FF00;
+    color: #0000FF;
+    color: #FFFFFF;
+    color: #000000;
+    color: #707070;
+    color: #CCCCCC;
+    color: #555555;
+    color: #9c5401;
+
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0e5f0;
+    color: #4b3d67;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #d7c9e3;
+}
+
+h1 {
+    font-style: italic;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4b3d67;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #7a6b98;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    font-family: 'Georgia', serif;
+    color: #6a4b8a;
+    margin-top: 40px;
+}
+
+.flower-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #d7c9e3;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.carousel {
+    position: relative;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.carousel-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    color: white;
+    background-color: #4b3d67;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.next {
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+button:hover {
+    background-color: #7a6b98;
+}

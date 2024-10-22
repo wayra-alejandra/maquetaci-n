@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores y optimización de imagenes</title>
+    <link rel="stylesheet" href="colors.css">
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Susurro del Viento</title>
+</head>
+<body>
+    <header>
+        <h1>Susurro del Viento</h1>
+        <nav>
+            <ul>
+                <li><a href="#rosas">Rosas</a></li>
+                <li><a href="#girasoles">Girasoles</a></li>
+                <li><a href="#lirios">Lirios</a></li>
+                <li><a href="#tulipanes">Tulipanes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="tulipanes">
+            <h2>Tulipanes</h2>
+            <img src="tulipanes.jpg" alt="Tulipanes" class="flower-image">
+            <p>Los tulipanes son flores hermosas que simbolizan la elegancia y la gracia.</p>
+        </section>
+        <section id="rosas">
+            <h2>Rosas</h2>
+            <img src="rosas.jpg" alt="Rosas" class="flower-image">
+            <p>Las rosas son el símbolo del amor y la pasión.</p>
+        </section>
+        <section id="girasoles">
+            <h2>Girasoles</h2>
+            <img src="girasoles.jpg" alt="Girasoles" class="flower-image">
+            <p>Los girasoles representan la felicidad y la adoración.</p>
+        </section>
+        <section id="lirios">
+            <h2>Lirios</h2>
+            <img src="lirios.jpg" alt="Lirios" class="flower-image">
+            <p>Los lirios simbolizan la pureza y la renovación.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Susurro del Viento</p>
+    </footer>
+    <section class="carousel">
+        <h2>Galería de Flores</h2>
+        <div class="carousel-container">
+            <img src="tuli azul.jpg" alt="Tulipanes" class="carousel-image">
+            <img src="tuli yellow.jpg" alt="Rosas" class="carousel-image" style="display: none;">
+            <img src="img/tuli rosA.jpg" alt="Girasoles" class="carousel-image" style="display: none;">
+            <img src="img/paisaje flores.jpg" alt="Lirios" class="carousel-image" style="display: none;">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+    <script src="carrusel.script.js"> 
+
+    </script>
+</body>
+</html>

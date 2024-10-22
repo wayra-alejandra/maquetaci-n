@@ -1,0 +1,510 @@
+
+
+/* Dispositivos extrapequeños (teléfonos, 600 px y menos) */
+@media only screen and (max-width: 600px) {
+
+  /* estilos presentación*/
+  #unico {
+    padding: 30px 15px 0 15px;
+    text-align: center;
+  }
+
+  #unico .seccion1 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    line-height: 22px;
+  }
+
+  #unico .seccion1 img {
+    width: 220px;
+  }
+
+  #unico .container-img {
+    text-align: center;
+  }
+
+  #unico .m-4 {
+    padding-top: 20px;
+    margin: 5px !important;
+    font-size: 14px;
+  }
+
+  #unico .seccion2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #unico .seccion2 img {
+    width: 60px;
+  }
+
+  #unico .seccion2  {
+    line-height: 16px;
+  }
+
+  /* estilos video presentación*/
+  #unico2 .contenedor_video {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #unico2 .contenedor_video .video iframe {
+    width: 300px;
+    height: 170px;
+  }
+
+  #unico2 .contenedor_video .texto_video {
+    padding-top: 20px;
+  }
+
+  /* estilos seccion*/
+  #unico3 .contenedor-img {
+    background-image: url('https://ayuda.ucatolicaluisamigo.edu.co/wp-content/uploads/2022/02/l1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+   #unico3 .contenedor-img p {
+     text-align: center;
+   }
+
+  #unico3 .contenedor-img a {
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+    margin-bottom: 15px;
+    background: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    display: none;
+  }
+
+  #unico3 .contenedor-botones {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+  }
+
+  #unico3 .contenedor-botones .m4 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  #unico3 .contenedor-botones .m4 img {
+    width: 30px;
+  }
+
+  #unico3 .contenedor-botones .m4 span {
+    margin-left: 10px;
+  }
+
+  /* estilos texto y video cuestionario*/
+  #unico4 {
+    padding: 0 10px;
+  }
+
+  /* estilos seccion presencial*/
+  #unico5 {
+    margin: 40px 0;
+  }
+
+  #unico5 .seccion1 {
+    text-align: center;
+  }
+
+  #unico5 .seccion1 p {
+    font-size: 17px;
+  }
+
+  #unico5 .seccion2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  #unico5 .seccion2 a {
+    text-decoration: none;
+    text-align: center;
+    color: #626161;
+    background-color: #FdFdFd;
+    width: 180px;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 4px 6px 2px rgba(0, 0, 0, 0.07);
+  }
+
+  #unico5 .seccion2 a:hover {
+    background: #f6f6f6;
+  }
+
+  #unico5 .seccion2 .circulo {
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  #unico5 .seccion2 .uno{
+    background: #007B99;
+  }
+
+  #unico5 .seccion2 .dos {
+    background: #11c9b8;
+  }
+
+  #unico5 .seccion2 .tres{
+    background: #e91e63;
+  }
+
+
+  #unico5 .seccion2 .circulo img{
+    width: 60px;
+  }
+
+}
+
+/* Dispositivos pequeños (tabletas verticales y teléfonos grandes, 600 px y más) */
+@media only screen and (min-width: 600px) {
+
+  /* estilos presentación*/
+  #unico {
+    padding: 20px 15px 0 15px;
+    text-align: center;
+  }
+
+  #unico .example {
+    margin-top: 30px;
+  }
+
+  #unico .seccion2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #unico .seccion2 img {
+    width: 75px;
+  }
+
+  #unico .seccion2 {
+    line-height: 16px;
+  }
+
+  /* estilos video presentación*/
+  #unico2 .contenedor_video .texto_video {
+    padding: 20px;
+  }
+
+  /* estilos seccion*/
+  #unico3 .contenedor-img {
+    background-image: url('https://ayuda.ucatolicaluisamigo.edu.co/wp-content/uploads/2022/02/l1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #unico3 .contenedor-img a {
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+    margin-bottom: 15px;
+    background: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+
+  #unico3 .contenedor-botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  #unico3 .contenedor-botones .m4 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 30px;
+  }
+
+  #unico3 .contenedor-botones .m4 img {
+    width: 40px;
+  }
+
+  #unico3 .contenedor-botones .m4 span {
+    margin-left: 10px;
+    font-size: 18px;
+  }
+
+  /* estilos seccion presencial*/
+  #unico5 {
+    margin: 40px 0;
+  }
+
+  #unico5 .seccion1 {
+    text-align: center;
+  }
+
+  #unico5 .seccion1 p {
+    font-size: 17px;
+  }
+
+  #unico5 .seccion2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 30px;
+  }
+
+  #unico5 .seccion2 a {
+    text-decoration: none;
+    text-align: center;
+    color: #626161;
+    background-color: #FdFdFd;
+    width: 190px;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 4px 6px 2px rgba(0, 0, 0, 0.07);
+  }
+
+  #unico5 .seccion2 a:hover {
+    background: #f6f6f6;
+  }
+
+  #unico5 .seccion2 .circulo {
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  #unico5 .seccion2 .uno{
+    background: #007B99;
+  }
+
+  #unico5 .seccion2 .dos {
+    background: #11c9b8;
+  }
+
+  #unico5 .seccion2 .tres{
+    background: #e91e63;
+  }
+
+  #unico5 .seccion2 .circulo img {
+    width: 60px;
+  }
+}
+
+/* Dispositivos medianos (tabletas horizontales, 768 px y más) */
+@media only screen and (min-width: 768px) {
+
+  /* estilos presentación*/
+  #unico {
+    padding: 40px 15px 0 15px;
+    text-align: center;
+  }
+
+  #unico h2 {
+      text-align: left;
+      padding-left: 25px;
+      margin: 0;
+  }
+
+  #unico .seccion1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px 0 50px;
+    text-align: left;
+    line-height: 22px;
+  }
+
+  #unico .seccion1 .example {
+    width: 50%;
+  }
+
+  #unico .seccion1 .container-img {
+    width: 50%;
+  }
+
+  #unico .seccion1 img {
+    width: 310px;
+  }
+
+  #unico .seccion2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  }
+
+  #unico .seccion2 img {
+  width: 75px;
+  }
+
+  #unico .seccion2 {
+  line-height: 16px;
+  }
+
+  /* estilos video presentación*/
+  #unico2 .contenedor_video .video iframe {
+    width: 440px;
+    height: 255px;
+  }
+
+  /* estilos seccion*/
+  #unico3 .contenedor-botones .m4 {
+    margin-left: 40px;
+  }
+
+  /* estilos texto y video cuestionario*/
+  #unico4 {
+    display: flex;
+    padding: 0 20px;
+  }
+
+  /* estilos seccion presencial*/
+  #unico5 {
+    margin: 40px 0;
+  }
+
+  #unico5 .seccion1 {
+    text-align: center;
+  }
+
+  #unico5 .seccion1 p {
+    font-size: 21px;
+  }
+
+  #unico5 .seccion2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 45px;
+  }
+
+  #unico5 .seccion2 a {
+    text-decoration: none;
+    text-align: center;
+    color: #626161;
+    background-color: #FdFdFd;
+    width: 200px;
+    height: auto;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 4px 6px 2px rgba(0, 0, 0, 0.07);
+  }
+
+  #unico5 .seccion2 a:hover {
+    background: #f6f6f6;
+  }
+
+  #unico5 .seccion2 .circulo {
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  #unico5 .seccion2 .uno{
+    background: #007B99;
+  }
+
+  #unico5 .seccion2 .dos {
+    background: #11c9b8;
+  }
+
+  #unico5 .seccion2 .tres{
+    background: #e91e63;
+  }
+
+  #unico5 .seccion2 .circulo img {
+    width: 80px;
+  }
+
+}
+
+/* Dispositivos grandes (computadoras portátiles/de escritorio, 992 px y más) */
+@media only screen and (min-width: 992px) {
+
+  /* estilos presentación*/
+  #unico .seccion1 {
+    padding: 20px 50px 0 50px;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  /* estilos video presentación*/
+  #unico2 .contenedor_video .video iframe {
+    width: 500px;
+    height: 255px;
+  }
+
+  /* estilos seccion*/
+  #unico3 .contenedor-img {
+    justify-content: space-around;
+}
+
+#unico3 .contenedor-botones .m4 img {
+    width: 50px;
+}
+
+.contenedor-botones .m4 {
+  margin-left: 40px;
+}
+
+}
+
+/* Dispositivos extra grandes (portátiles y equipos de escritorio grandes, 1200 px y más) */
+@media only screen and (min-width: 1200px) {
+
+/* estilos presentación*/
+#unico .seccion1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /* text-indent: 20px; */
+    line-height: 20px;
+  }
+
+  /* estilos video presentación*/
+  #unico2 .contenedor_video .video iframe {
+    width: 740px;
+    height: 400px;
+  }
+}

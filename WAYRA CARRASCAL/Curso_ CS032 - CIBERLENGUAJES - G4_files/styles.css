@@ -1,0 +1,4 @@
+.block_completion_progress .progressBarCell.completed { background-color: #c6efd2; }
+.block_completion_progress .progressBarCell.submittedNotComplete { background-color: #ff9f3b; }
+.block_completion_progress .progressBarCell.notCompleted { background-color: #ff4e4e; }
+.block_completion_progress .progressBarCell.futureNotCompleted { background-color: #f7f7f7; }

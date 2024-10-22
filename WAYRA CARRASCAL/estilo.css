@@ -1,0 +1,110 @@
+h1 {
+    background-color: rgb(164, 207, 247);
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+    color: rgb(212, 92, 228);
+    font-size: 16px;
+}
+
+article {
+    background-color: beige;
+    width: 80%;
+    margin-left: 10%;
+}
+
+article h1 {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+#logo {
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 50px;
+    color: brown;
+
+}
+
+.destacado {
+    font-style: italic;
+    text-align: right;
+    width: 60%;
+    margin-left: 30%;
+    color: rgb(0, 0, 0);
+    padding-bottom: 30px;
+}
+
+.propiedades {
+    background-color: rgb(225, 184, 248);
+    /*Margen interno*/
+    /*
+    padding-top: 50px;
+    padding-right: 40px;
+    padding-bottom: 50px;
+    padding-left: 40px;
+    */
+    padding: 30px;
+
+    /* margin-top: 150px;
+    margin-right: 40px;
+    margin-bottom: 140px;
+    margin-left: 60px;*/
+    margin: 10px;
+
+    border-top: 4px red solid;
+    border-right: 10px rgb(94, 216, 94) dashed;
+    border-bottom: 3px rgb(240, 210, 76) dotted;
+    border-left: purple 5px double;
+
+
+}
+
+.menu a:link {
+    color: rgb(194, 23, 94);
+    text-decoration: none;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a:link,
+nav a:visited {
+    color: darkslateblue; 
+    text-decoration: none;
+    border: solid 1px black;
+    padding: 5px 10px;
+}
+
+nav a:visited {
+    color: chocolate;
+}
+
+nav a:hover {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+nav a:active {
+    background-color: black;
+}
+.todo{
+    width: 1200px;
+    margin: 0 auto;
+}
+body{
+    background-color: rgb(224, 155, 155);
+    background-image: url(../Mis\ imágenes);
+}

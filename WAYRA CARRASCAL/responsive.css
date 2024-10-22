@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(215, 242, 253);
+}
+
+img{
+    width: 100%;
+}
+@media (min-width: 576px) {
+    body{
+        background-color: aquamarine;
+    }
+   
+}
+
+@media (min-width:992px){
+    body{
+        background-color: azure;
+    }
+    img{
+        width: 49%;
+    }
+    h1{
+        color: blueviolet;
+        text-align: center;
+        background-color: antiquewhite;
+       padding: 20px;
+       margin: 0% auto;
+       margin-bottom: 20px;
+       border-radius: 20px;
+     }
+}

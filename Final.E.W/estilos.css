@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+body {
+    margin: 0;
+}
+
+.cursiva{
+    font-family: "Great Vibes", cursive !important;
+    color: #fc007b;
+    font-size: 50px;
+    font-weight: 50;
+}
+
+header {
+    background-color: #fbedef;
+    color: #fc007b;
+    flex-direction: column; /* Los elementos estarán apilados verticalmente */
+    text-align: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0; 
+    padding-bottom: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 50;
+}
+
+.header-content {
+    background-color: #fffefe;
+    display: flex; 
+    align-items: center; 
+    width: 100%;
+}
+#logo img{
+    width: 60%;
+}
+nav img{
+    margin: 15px;
+    justify-items: center;
+}
+nav {
+    font-size: 25px; /* Tamaño de fuente */
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 50;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    display: flex; /* Muestra los elementos de la lista en línea */
+    align-items: center;
+}
+
+nav li {
+    margin: 0 15px; /* Espacio horizontal entre los elementos del menú */
+    color: black;
+}
+
+nav a:link {
+    text-decoration: none;
+    padding: 14px; 
+    color: black; 
+}
+
+nav a:hover {
+    background-color: #fbedef;
+    color: #fc007b;
+}
+
+nav a:active {
+    background-color: #fbedef;
+    color: #fc007b;
+}
+
+
+section{
+    display: flex;
+    font-size: 30px;
+    background-color: #fbedef;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
+}
+
+section h1{
+    font-size: 50px;
+    display: inline;
+}
+
+section img{
+    height: auto;
+    width: 50%;
+    padding: 20px;
+   margin: 0%;
+}
+
+.texto{
+    padding: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 50;
+    font-size: 20px;
+}
+
+footer{
+    background-color: #f9f5f1;
+    font-family: "Open Sans", sans-serif;
+    color: #000000;
+    font-weight: 50;
+}
+
+footer h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 50;
+    text-align: center;
+    font-size: 50px;
+}
+
+footer img{
+    width: 30%;
+    height: auto;
+}
+
+.columnas {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.columna {
+    text-align: left;
+    padding: 0;
+}
+
+.columna ul li {
+    padding: 5px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #666;
+}
+
+footer a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 600px){
+    body{
+        margin: 0;
+        width: 100%;
+    }
+    .menu-icon {
+        display: block; /* Mostrar las tres rayitas en pantallas pequeñas */
+    }
+    nav ul {
+        display: none; /* Ocultar el menú completo en pantallas pequeñas */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        border-radius: 5px;
+        width: 300px;
+    }
+    nav ul.show {
+        display: flex; /* Mostrar el menú desplegable en pantallas pequeñas */
+    }
+
+    .nav-links.show ul { 
+        display: flex; /* Mostrar el menú desplegable en pantallas pequeñas */
+    }
+
+    .header-content {
+        background-color: #fffefe;
+        display: flex; 
+        align-items: center; 
+        width: 100%;
+    }
+    
+    #logo img{
+        width: 30%;
+        align-items: flex-start;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #logo img {
+        width: 50%;
+    }
+    
+    section {
+        flex-direction: column;
+        font-size: 20px;
+        padding: 20px;
+    }
+    
+    section h1 {
+        font-size: 30px;
+    }
+    
+    section img {
+        width: 100%;
+    }
+    
+    .columnas {
+        flex-direction: column;
+        font-size: 14px;
+    }
+    
+    footer h1 {
+        font-size: 24px;
+    }
+    
+    footer img {
+        width: 50%;
+    }
+    }
+
+    @media (min-width: 558px)and (max-width: 992px){
+        #logo img {
+            width: 40%;
+        }
+    
+        section {
+            flex-direction: column;
+            padding: 20px;
+        }
+    
+        section img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    
+        .columnas {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        footer h1 {
+            font-size: 40px;
+        }
+    
+        footer img {
+            width: 40%;
+        }
+    }
+
